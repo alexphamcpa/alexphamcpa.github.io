@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex's Work Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.2;
+            color: #444;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #7a4419;
+            position: sticky;
+            top: 0;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        header p {
+            margin: 5px 0;
+        }
+        .tabs {
+            position: sticky;
+            top: 117px;
+            display: flex;
+            justify-content: center;
+            background: #f4f4f4;
+            padding: 10px 0;
+        }
+        .tabs button {
+            background: transparent;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.1em;
+            cursor: pointer;
+        }
+        .tabs button.active {
+            color: white;
+            background: #7a4419;
+            border-radius: 5px;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            /* text-align: center; */
+        }
+        .tab-content.active {
+            display: block;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #7a4419;;
+            color: white;
+        }
+        .section {
+            /*margin-bottom: 40px; */
+            display: flex;
+        }
+        .tab-content.active h2 {
+            border-bottom: 2px solid #d4d4d4;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            color: #7a4419;
+        }
+        .tab-content.active h4 {
+            border-bottom: 2px solid #d4d4d4;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            color: #b08968;
+        }        
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card h3 {
+            padding: 15px;
+            margin: 0;
+            background-color: #a4925a;
+            color: white;
+        }
+        .card p {
+            padding: 15px;
+            margin: 0;
+        }
+        .card a {
+            display: block;
+            padding: 15px;
+            text-align: center;
+            background: #a4925a;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 0 0 8px 8px;
+        }
+        .card a:hover {
+            background: #003580;
+        }
+        ul li {
+            padding: 2px 0px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Alex Pham, CPA</h1>
+        <p>Finance, Audit, BI & Analytics | Toronto, ON | alexphamcpa@gmail.com</p>        
+    </header>
+    <div class="tabs">
+        <button class="tab-link" onclick="openTab('about')">About</button>
+        <button class="tab-link active" onclick="openTab('projects')">Projects</button>
+        <button class="tab-link" onclick="openTab('experience')">Experience</button>
+        <button class="tab-link" onclick="openTab('articles')">Articles</button>
+        <button class="tab-link" onclick="openTab('contact')">Contact</button>
+    </div>
+    <div id="about" class="tab-content">
+        <h2>About Me</h2>
+        <img style='border-radius: 50%; float:left' src="images/About Me.jpeg" alt="image" />
+        <div style='margin-left: 200px; margin-top:42px'>
+            <p>
+                I am an interdisciplinary finance, audit, BI and analytics specialist with a strong passion for leveraging data and technology to drive strategic decision-making and operational efficiency.
+            </p>
+            <p>
+                With 10 years of experience in auditing, internal controls, data analytics, business intelligence, and data visualization, I have provided impactful data solutions that empower stakeholders and executive leaders with actionable insights across diverse geographies, including Canada, the US, the UK, Europe, the Caribbean, and Asia Pacific.
+            </p>
+        </div>
+        <div style='margin-top:50px'>
+            <h4>My Expertise</h4>
+            <ul>
+                <li>
+                    <strong>Business Intelligence & Analytics:</strong> I architect and build scalable end-to-end BI & analytics solutions aiding strategic and tactical business decisions.
+                </li>
+                <li>
+                    <strong>Internal Audit & Risk Consulting:</strong> I transform the internal audit function via innovation, advanced analytics, and risk coverage enhancement.
+                </li>
+                <li>
+                    <strong>Efficiency & Process Improvement:</strong> Through process re-engineering, automation, and technical training, I have delivered efficiency gains of 3x–10x, unlocking significant value across teams and projects.
+                </li>
+            </ul>
+        </div>
+        <p>
+            I am excited about opportunities in data analytics, finance, audit, and consulting. Feel free to connect, and I look forward to our chances to collaborate.
+        </p>
+        <div class="section" style="padding-top: -40px;">
+            <div style="width: 75%; padding-right: 30px;">
+                <h4>IT Competencies</h4>
+                <ul>
+                    <li>
+                        <strong>Python:</strong> Pandas, Numpy, Mathplotlib, Seaborn, Scikit-Learn, Scipy, Statsmodels, PyTorch, PySpark, NLTK, LightGBM, XGBoost, CatBoost, Tkinter (UI), etc.  
+                    </li>
+                    <li>
+                        <strong>SQL:</strong>  T-SQL, SQL Server, Spark SQL 
+                    </li>
+                    <li>
+                        <strong>Cloud & Big Data:</strong> Azure, Databricks, Spark, Dataiku, AWS, GCP
+                    </li>
+                    <li>
+                        <strong>Tableau</strong>: Expert
+                    </li>
+                    <li>
+                        <strong>Power BI:</strong> Intermediate
+                    </li>
+                </ul>
+                <p>
+                    Other skills: Excel, R, D3.js, Scala, Java, XML, HTML, CSS, JavaScript, C#, ASP.NET, Jira, Confluence, Access, Office
+                </p>
+            </div>
+            <div style="width: 25%; border-left: 2px solid #e6e6e6; padding-left: 30px;">
+                <h4>Education</h4>
+                <p><strong>MSc., Computational Data Analytics</strong><br>Georgia Institute of Technology<br>2023 - 2025</p>
+                <p><strong>BBA., Finance</strong><br>FPT University</p>
+                <p><strong>HD., Software Engineering</strong><br>Aptech</p>
+            </div>
+        </div>
+    </div>
+    <div id="projects" class="tab-content active">
+        <h2>A. Machine Learning</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>S&P 500 Prediction</h3>
+                <p>Can the S&P 500 be predicted? Let's explore it with supervised marchine learning.</p>
+                <img src="images/Correlation Heatmap.png" alt="Correlation Heatmap" width="400" height="225" style='max-height: 100%; max-width: 100%; object-fit: contain'/>
+                <a href="https://github.com/alexphamcpa/finance_and_investment/tree/main/Predicting%20S&P%20500" target="_blank">View on GitHub</a>
+            </div>
+            <div class="card">
+                <h3>Money Laundering Detection</h3>
+                <p>Can suspicious financial transactions be automatically detected? Let's find out.</p>
+                <img src="images/Confusion Matrix.png" alt="Confusion Matrix" width="400" height="225" style='max-height: 100%; max-width: 100%; object-fit: contain'/>
+                <a href="https://github.com/alexphamcpa/advanced_analytics/tree/main/machine_learning/Money%20Laundering%20Detection" target="_blank">View on GitHub</a>
+            </div>
+            <div class="card">
+                <h3>Problematic Internet Use</h3>
+                <p>Can we predict children's and adolescents' problematic internet use? Let's dive into it.</p>
+                <iframe width="400" height="223" src="https://www.youtube.com/embed/HVGh3Nvv49c" allowfullscreen></iframe>
+                <a href="https://github.com/alexphamcpa/advanced_analytics/tree/main/machine_learning/Problematic%20Internet%20Use" target="_blank">View on GitHub</a>
+            </div>
+        </div>
+        <br />
+        <!-- <p>Other ML projects: </p> -->
+
+        <h2>B. Audit Data Analytics</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Reporting EFT-SWIFT Transactions</h3>
+                <p>How to perform full population testing to ensure regulatory reporting compliance? Check it out.</p>
+                <img src="images/EFT-SWIFT.png" alt="ETF-SWIFT Transactions" width="400" height="225" style='max-height: 100%; max-width: 100%; object-fit: contain'/>
+                <a href="https://github.com/alexphamcpa/audit_data_analytics/tree/main/EFT%20Transactions" target="_blank">View on GitHub</a>
+            </div>
+            <div class="card">
+                <h3>Anomaly Detection</h3>
+                <p>How to automatically spot anomalies in credit card transactions? Get the insights below.</p>
+                <img src="images/Anomaly Detection.png" alt="Anomaly Detection" width="400" height="225" style='max-height: 100%; max-width: 100%; object-fit: contain'/>
+                <a href="https://github.com/alexphamcpa/audit_data_analytics/tree/main/Credit%20Card%20Transactions" target="_blank">View on GitHub</a>
+            </div>
+            <div class="card">
+                <h3>Analyses of Credit Card Transactions</h3>
+                <p>How to perform exploratory data analyses on credit card transactions? Let's look into it.</p>
+                <img src="images/QoQ Summary.png" alt="QoQ Summary" width="400" height="225" style='max-height: 100%; max-width: 100%; object-fit: contain'/>
+                <a href="https://github.com/alexphamcpa/audit_data_analytics/tree/main/Credit%20Card%20Transactions" target="_blank">View on GitHub</a>
+            </div>
+        </div>
+        <br />
+        <!-- <p>Other projects: </p> -->
+
+        <h2>C. BI & Analytics with Tableau</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Banking Churn Dashboard</h3>
+                <p>Interactive dashboard for analyzing customer churn rates in the banking sector</p>
+                <img src="images/Customer Churn in Banking Dashboard.png" alt="Customer Churn in Banking" width="400" height="225" style='max-height: 100%; max-width: 100%; object-fit: contain' />
+                <a href="https://public.tableau.com/app/profile/ngoc.tu.pham1849/viz/BankingCustomerChurn_17293752460520/CustomerChurn" target="_blank">View on Tableau Public</a>
+            </div>
+            <div class="card">
+                <h3>Problematic Internet Use</h3>
+                <p>Interactive dashboards to showcase EDA and predictive analytics results from ML models</p>
+                <img src="images/PIU Prediction.png" alt="Problematic Internet Use" width="400" height="225" style='max-height: 100%; max-width: 100%; object-fit: contain' href="https://public.tableau.com/app/profile/ngoc.tu.pham1849/viz/PIUPredictiveAnalytics/PIU-SIIPrediction" />
+                <a href="https://public.tableau.com/app/profile/ngoc.tu.pham1849/viz/PIUPredictiveAnalytics/PIU-SIIPrediction" target="_blank">View on Tableau Public</a>
+            </div>
+            <div class="card">
+                <h3>Staff Attrition Dashboard</h3>
+                <p>Interactive Tableau dashboard for insights into employee attrition, part of HR Analytics</p>
+                <img src="images/Staff Attrition Dashboard.png" alt="Staff Attrition" width="400" height="225" style='max-height: 100%; max-width: 100%; object-fit: contain'/>
+                <a href="https://public.tableau.com/app/profile/ngoc.tu.pham1849/viz/HRAnalytics_17351014706850/HRAnalytics" target="_blank">View on Tableau Public</a>
+            </div>
+        </div>
+        <br />
+        <p>Other Tableau projects: <a href="https://public.tableau.com/app/profile/ngoc.tu.pham1849/vizzes">Explore my Tableau Public profile.</a></p>
+
+        <h2>D. Business Intelligence with Microsoft Power BI</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Staff Attrition Dashboard</h3>
+                <p>Interactive Power BI dashboard for insights into employee attrition, part of HR Analytics</p>
+                <img src="images/Staff Attrition (Power BI) Dashboard.png" alt="Staff Attrition" width="400" height="225"/>
+                <a href="https://github.com/alexphamcpa/power-bi" target="_blank">View on GitHub</a>
+            </div>
+            <div class="card">
+                <h3>Placeholder</h3>
+                <p>Stay tuned.</p>
+            </div>
+            <div class="card">
+                <h3>Placeholder</h3>
+                <p>Stay tuned.</p>
+            </div>
+        </div>
+        <br />
+        <p>  </p>
+    </div>
+    <div id="articles" class="tab-content">
+        <h2>Articles</h2>
+        <p>Stayed tuned for more updates.</p>
+    </div>
+    <div id="experience" class="tab-content">
+        <h2>Experience</h2>
+        <p>Please visit my <a href="https://www.linkedin.com/in/tuphamn/">LinkedIn profile</a> for more details.</p>
+    </div>
+    <div id="contact" class="tab-content">
+        <h2>Contact</h2>
+        <p>Get in touch at <a href="mailto:yourname@example.com">alexphamcpa@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/tuphamn/">https://www.linkedin.com/in/tuphamn/</a></p>
+    </div>
+    <footer>
+        &copy; 2025 Alex Pham, CPA
+    </footer>
+    <script>
+        function openTab(tabName) {
+            const contents = document.querySelectorAll('.tab-content');
+            const links = document.querySelectorAll('.tab-link');
+            contents.forEach(content => content.classList.remove('active'));
+            links.forEach(link => link.classList.remove('active'));
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
