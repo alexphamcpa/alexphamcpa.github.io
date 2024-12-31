@@ -5,7 +5,7 @@ def findDuplicateCharacters(s):
     return [item for item, count in collections.Counter(s).items() if count > 1]
 
 def main():
-    s = "Hello World"
+    s = "Hello World 123 Hello"
     duplicates = findDuplicateCharacters(s)
     print("There are character duplicates in the string '{}': {}".format(s, duplicates))
 
